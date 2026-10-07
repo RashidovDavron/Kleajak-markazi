@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# 🎓 Kelajak Markazi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Zamonaviy o'quv markazi uchun to'liq funksional web sayt. React, MUI va i18next yordamida yaratilgan.
 
-## Available Scripts
+![Kelajak Markazi](https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📖 Loyiha haqida
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Kelajak Markazi** — bu yoshlar uchun bilim va kasb maskani. Sayt orqali foydalanuvchilar to'garaklar, ilm-fan yo'nalishlari, zamonaviy kasblar va kasbga yo'naltirish xizmatlari bilan tanishishlari mumkin.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ✨ Asosiy xususiyatlar
 
-### `npm test`
+- 🌐 **Ko'p tilli** — O'zbek, Rus, Ingliz
+- 🎨 **Apple uslubidagi dizayn** — minimalistik va zamonaviy
+- 📱 **To'liq responsiv** — mobil, planshet, desktop
+- 🔐 **Autentifikatsiya** — kirish, ro'yxatdan o'tish
+- 🎯 **Kasbga yo'naltirish testi** — 3 savolli interaktiv test
+- 📚 **12 ta fan** — Fizika, Kimiya, Biologiya va boshqalar
+- 🎓 **6 ta to'garak** — Dasturlash, Robototexnika, Ingliz tili...
+- 💼 **8 ta zamonaviy kasb** — Frontend, Backend, AI, Data Science...
+- 📊 **Real rasmlar** — Unsplash integratsiya
+- 🎬 **Animatsiyalar** — fade-up, scale-in effektlari
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Texnologiyalar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Texnologiya | Versiya | Maqsad |
+|-------------|---------|--------|
+| **React** | 18+ | UI kutubxonasi |
+| **React Router** | 6.x | Sahifalar orasida o'tish |
+| **MUI (Material-UI)** | 5.x | UI komponentlar |
+| **i18next** | 23+ | Ko'p tilli qo'llab-quvvatlash |
+| **Emotion** | 11.x | CSS-in-JS |
+| **Unsplash** | — | Rasmlar manbai |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Boshlash
 
-### `npm run eject`
+### Talablar
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Node.js** 14+ ([yuklab olish](https://nodejs.org))
+- **npm** yoki **yarn**
+- **Git** (ixtiyoriy)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### O'rnatish

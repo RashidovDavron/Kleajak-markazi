@@ -8,7 +8,8 @@ export const sciences = [
       en: 'Mechanics, electromagnetism, quantum physics',
     },
     icon: '⚛️',
-    color: '#0071e3',
+    color: '#5e5ce6',
+    bg: 'rgba(94, 92, 230, 0.1)',
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const sciences = [
     },
     icon: '🧪',
     color: '#30d158',
+    bg: 'rgba(48, 209, 88, 0.1)',
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const sciences = [
     },
     icon: '🧬',
     color: '#ff9f0a',
+    bg: 'rgba(255, 159, 10, 0.1)',
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ export const sciences = [
     },
     icon: '🌌',
     color: '#5e5ce6',
+    bg: 'rgba(94, 92, 230, 0.1)',
   },
   {
     id: 5,
@@ -53,6 +57,7 @@ export const sciences = [
     },
     icon: '🌍',
     color: '#00c7be',
+    bg: 'rgba(0, 199, 190, 0.1)',
   },
   {
     id: 6,
@@ -64,5 +69,78 @@ export const sciences = [
     },
     icon: '📜',
     color: '#ff375f',
+    bg: 'rgba(255, 55, 95, 0.1)',
+  },
+  {
+    id: 7,
+    name: { uz: 'Matematika', ru: 'Математика', en: 'Mathematics' },
+    desc: {
+      uz: 'Algebra, geometriya, analiz',
+      ru: 'Алгебра, геометрия, анализ',
+      en: 'Algebra, geometry, calculus',
+    },
+    icon: '📐',
+    color: '#0071e3',
+    bg: 'rgba(0, 113, 227, 0.1)',
+  },
+  {
+    id: 8,
+    name: { uz: 'Informatika', ru: 'Информатика', en: 'Computer Science' },
+    desc: {
+      uz: 'Algoritmlar, dasturlash asoslari',
+      ru: 'Алгоритмы, основы программирования',
+      en: 'Algorithms, programming basics',
+    },
+    icon: '💻',
+    color: '#30d158',
+    bg: 'rgba(48, 209, 88, 0.1)',
+  },
+  {
+    id: 9,
+    name: { uz: 'Ekologiya', ru: 'Экология', en: 'Ecology' },
+    desc: {
+      uz: 'Tabiat, atrof-muhit, barqarorlik',
+      ru: 'Природа, окружающая среда, устойчивость',
+      en: 'Nature, environment, sustainability',
+    },
+    icon: '🌱',
+    color: '#30d158',
+    bg: 'rgba(48, 209, 88, 0.1)',
+  },
+  {
+    id: 10,
+    name: { uz: 'Iqtisodiyot', ru: 'Экономика', en: 'Economics' },
+    desc: {
+      uz: 'Bozor, biznes, moliya',
+      ru: 'Рынок, бизнес, финансы',
+      en: 'Market, business, finance',
+    },
+    icon: '💰',
+    color: '#ff9f0a',
+    bg: 'rgba(255, 159, 10, 0.1)',
+  },
+  {
+    id: 11,
+    name: { uz: 'Psixologiya', ru: 'Психология', en: 'Psychology' },
+    desc: {
+      uz: "Inson ruhi, xulq-atvor",
+      ru: 'Психика человека, поведение',
+      en: 'Human mind, behavior',
+    },
+    icon: '🧠',
+    color: '#bf5af2',
+    bg: 'rgba(191, 90, 242, 0.1)',
+  },
+  {
+    id: 12,
+    name: { uz: 'Falsafa', ru: 'Философия', en: 'Philosophy' },
+    desc: {
+      uz: "Mantiq, etika, dunyoqarash",
+      ru: 'Логика, этика, мировоззрение',
+      en: 'Logic, ethics, worldview',
+    },
+    icon: '🤔',
+    color: '#5e5ce6',
+    bg: 'rgba(94, 92, 230, 0.1)',
   },
 ];

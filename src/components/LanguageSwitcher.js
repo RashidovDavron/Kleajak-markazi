@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  IconButton,
+  Button,
   Menu,
   MenuItem,
   ListItemIcon,
   ListItemText,
-  Tooltip,
+  Box,
+  Typography,
 } from '@mui/material';
-import LanguageIcon from '@mui/icons-material/Language';
 import CheckIcon from '@mui/icons-material/Check';
 
 const languages = [
-  { code: 'uz', label: 'O\'zbekcha', flag: '🇺🇿' },
-  { code: 'ru', label: 'Русский', flag: '🇷🇺' },
-  { code: 'en', label: 'English', flag: '🇬🇧' },
+  { code: 'uz', short: 'UZ', label: "O'zbekcha", flag: '🇺🇿' },
+  { code: 'ru', short: 'RU', label: 'Русский', flag: '🇷🇺' },
+  { code: 'en', short: 'EN', label: 'English', flag: '🇬🇧' },
 ];
 
-export default function LanguageSwitcher({ color = '#1d1d1f' }) {
+export default function LanguageSwitcher({ variant = 'desktop' }) {
   const { i18n } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -29,22 +29,35 @@ export default function LanguageSwitcher({ color = '#1d1d1f' }) {
     handleClose();
   };
 
-  const current = languages.find((l) => l.code === i18n.language) || languages[0];
+  const currentLang = i18n.language?.slice(0, 2) || 'uz';
+  const current = languages.find((l) => l.code === currentLang) || languages[0];
 
   return (
     <>
-      <Tooltip title="Til / Язык / Language">
-        <IconButton
-          onClick={handleClick}
-          size="small"
-          sx={{
-            color,
-            '&:hover': { background: 'rgba(0,0,0,0.04)' },
-          }}
-        >
-          <LanguageIcon sx={{ fontSize: 20 }} />
-        </IconButton>
-      </Tooltip>
+      <Button
+        onClick={handleClick}
+        disableRipple
+        sx={{
+          minWidth: 0,
+          px: 1.5,
+          py: 0.75,
+          borderRadius: 2,
+          color: '#1d1d1f',
+          fontSize: '0.8125rem',
+          fontWeight: 600,
+          letterSpacing: '0.5px',
+          textTransform: 'uppercase',
+          border: '1px solid rgba(0,0,0,0.1)',
+          background: 'transparent',
+          '&:hover': {
+            background: 'rgba(0,0,0,0.04)',
+            borderColor: 'rgba(0,0,0,0.2)',
+            transform: 'none',
+          },
+        }}
+      >
+        {current.short}
+      </Button>
 
       <Menu
         anchorEl={anchorEl}
@@ -55,7 +68,7 @@ export default function LanguageSwitcher({ color = '#1d1d1f' }) {
         PaperProps={{
           sx: {
             mt: 1,
-            minWidth: 180,
+            minWidth: 200,
             borderRadius: 3,
             boxShadow: '0 20px 60px rgba(0,0,0,0.15)',
             border: '1px solid rgba(0,0,0,0.06)',
@@ -66,7 +79,7 @@ export default function LanguageSwitcher({ color = '#1d1d1f' }) {
           <MenuItem
             key={lang.code}
             onClick={() => handleSelect(lang.code)}
-            selected={i18n.language === lang.code}
+            selected={currentLang === lang.code}
             sx={{
               py: 1.25,
               px: 2,
@@ -80,10 +93,24 @@ export default function LanguageSwitcher({ color = '#1d1d1f' }) {
               {lang.flag}
             </ListItemIcon>
             <ListItemText
-              primary={lang.label}
-              primaryTypographyProps={{ fontSize: '0.9375rem' }}
+              primary={
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Typography
+                    sx={{
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      color: '#0071e3',
+                      letterSpacing: '0.5px',
+                      minWidth: 28,
+                    }}
+                  >
+                    {lang.short}
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.9375rem' }}>{lang.label}</Typography>
+                </Box>
+              }
             />
-            {i18n.language === lang.code && (
+            {currentLang === lang.code && (
               <CheckIcon sx={{ fontSize: 18, color: '#0071e3', ml: 1 }} />
             )}
           </MenuItem>

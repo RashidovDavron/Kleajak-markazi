@@ -1,23 +1,41 @@
+/* ========== RESET ========== */
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  padding: 0;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+    'Helvetica Neue', Roboto, Arial, sans-serif;
 }
 
-/* Fade-up animatsiya */
+/* ========== MOBILE BOTTOM NAVIGATION ========== */
+/* 
+  BottomNav balandligi = 68px (icon + label)
+  Safe area (iPhone) = ~34px
+  Jami = ~110px — shu sababli pastda joy qoldiramiz
+*/
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 110px !important;
+  }
+}
+
+/* ========== ANIMATSIYALAR ========== */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -26,19 +44,18 @@ body {
 }
 
 .fade-up {
-  animation: fadeUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.fade-up-delay-1 { animation-delay: 0.1s; }
-.fade-up-delay-2 { animation-delay: 0.2s; }
-.fade-up-delay-3 { animation-delay: 0.3s; }
-.fade-up-delay-4 { animation-delay: 0.4s; }
+.fade-up-delay-1 { animation-delay: 0.08s; }
+.fade-up-delay-2 { animation-delay: 0.16s; }
+.fade-up-delay-3 { animation-delay: 0.24s; }
+.fade-up-delay-4 { animation-delay: 0.32s; }
 
-/* Scale in */
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.96);
   }
   to {
     opacity: 1;
@@ -47,12 +64,17 @@ body {
 }
 
 .scale-in {
-  animation: scaleIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-/* Scroll */
+.fade-in {
+  animation: fadeUp 0.6s ease both;
+}
+
+/* ========== SCROLLBAR ========== */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -68,15 +90,26 @@ body {
   background: #1d1d1f;
 }
 
-/* Mobil uchun pastdan joy */
-@media (max-width: 900px) {
-  body {
-    padding-bottom: 76px;
-  }
+/* ========== HORIZONTAL SCROLL ========== */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Rasmlar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========== RASM ========== */
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+/* ========== IOS ZOOM FIX ========== */
+input,
+textarea,
+select {
+  font-size: 16px !important;
 }

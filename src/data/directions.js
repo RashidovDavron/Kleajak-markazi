@@ -4,7 +4,7 @@ export const directions = [
     icon: '💻',
     title: { uz: 'IT va Dasturlash', ru: 'IT и Программирование', en: 'IT & Programming' },
     desc: {
-      uz: "Dasturlash, web, mobil, AI",
+      uz: 'Dasturlash, web, mobil, AI',
       ru: 'Программирование, веб, мобильные, ИИ',
       en: 'Programming, web, mobile, AI',
     },
@@ -15,7 +15,7 @@ export const directions = [
     icon: '🔬',
     title: { uz: 'Ilm-fan', ru: 'Наука', en: 'Science' },
     desc: {
-      uz: "Fizika, kimyo, biologiya",
+      uz: 'Fizika, kimyo, biologiya',
       ru: 'Физика, химия, биология',
       en: 'Physics, chemistry, biology',
     },
@@ -26,7 +26,7 @@ export const directions = [
     icon: '🎨',
     title: { uz: 'Ijodkorlik', ru: 'Творчество', en: 'Creativity' },
     desc: {
-      uz: "Dizayn, rasm, musiqa",
+      uz: 'Dizayn, rasm, musiqa',
       ru: 'Дизайн, рисование, музыка',
       en: 'Design, drawing, music',
     },
@@ -37,7 +37,7 @@ export const directions = [
     icon: '🌐',
     title: { uz: 'Tillar', ru: 'Языки', en: 'Languages' },
     desc: {
-      uz: "Ingliz, rus, arab, xitoy",
+      uz: 'Ingliz, rus, arab, xitoy',
       ru: 'Английский, русский, арабский, китайский',
       en: 'English, Russian, Arabic, Chinese',
     },
@@ -57,7 +57,7 @@ export const directions = [
   {
     id: 6,
     icon: '🎯',
-    title: { uz: 'Kasbga yo\'naltirish', ru: 'Профориентация', en: 'Career Guidance' },
+    title: { uz: "Kasbga yo'naltirish", ru: 'Профориентация', en: 'Career Guidance' },
     desc: {
       uz: "To'g'ri kasbni tanlash",
       ru: 'Выбор правильной профессии',
@@ -71,7 +71,7 @@ export const careerQuestions = [
   {
     id: 1,
     q: {
-      uz: "Sizga qaysi soha qiziqarli?",
+      uz: 'Sizga qaysi soha qiziqarli?',
       ru: 'Какая сфера вам интересна?',
       en: 'Which field interests you?',
     },
@@ -91,14 +91,14 @@ export const careerQuestions = [
     },
     options: [
       { value: 'team', label: { uz: 'Jamoa bilan', ru: 'В команде', en: 'In a team' } },
-      { value: 'solo', label: { uz: 'Yolg\'iz', ru: 'Один', en: 'Alone' } },
+      { value: 'solo', label: { uz: "Yolg'iz", ru: 'Один', en: 'Alone' } },
       { value: 'both', label: { uz: 'Ikkalasi ham', ru: 'И так, и так', en: 'Both' } },
     ],
   },
   {
     id: 3,
     q: {
-      uz: "Kelajakda qanday ishlamoqchisiz?",
+      uz: 'Kelajakda qanday ishlamoqchisiz?',
       ru: 'Как хотите работать в будущем?',
       en: 'How do you want to work in the future?',
     },
@@ -106,7 +106,7 @@ export const careerQuestions = [
       { value: 'office', label: { uz: 'Ofisda', ru: 'В офисе', en: 'In office' } },
       { value: 'remote', label: { uz: 'Masofadan', ru: 'Удалённо', en: 'Remote' } },
       { value: 'freelance', label: { uz: 'Frilanser', ru: 'Фрилансер', en: 'Freelancer' } },
-      { value: 'business', label: { uz: 'O\'z biznesim', ru: 'Свой бизнес', en: 'Own business' } },
+      { value: 'business', label: { uz: "O'z biznesim", ru: 'Свой бизнес', en: 'Own business' } },
     ],
   },
 ];

@@ -20,9 +20,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
-import SchoolIcon from '@mui/icons-material/School';
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -33,7 +31,7 @@ export default function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
   const [open, setOpen] = useState(false);
 
   const handleLogout = () => {
@@ -60,7 +58,7 @@ export default function Header() {
   return (
     <>
       <AppBar position="sticky" elevation={0}>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{ px: { xs: 1.5, sm: 2, md: 3 } }}>
           <Toolbar
             disableGutters
             sx={{
@@ -75,29 +73,35 @@ export default function Header() {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 1,
+                gap: { xs: 1, sm: 1.2 },
                 textDecoration: 'none',
                 color: 'inherit',
+                flexShrink: 0,
               }}
             >
               <Box
                 sx={{
-                  width: 40,
-                  height: 40,
+                  width: { xs: 36, sm: 42 },
+                  height: { xs: 36, sm: 42 },
                   borderRadius: 2.5,
                   background: 'linear-gradient(135deg, #0071e3 0%, #5856d6 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'white',
+                  fontWeight: 700,
+                  fontSize: { xs: '0.9rem', sm: '1.05rem' },
+                  letterSpacing: '-0.5px',
+                  boxShadow: '0 4px 14px rgba(0, 113, 227, 0.35)',
+                  flexShrink: 0,
                 }}
               >
-                <SchoolIcon sx={{ fontSize: 22 }} />
+                KM
               </Box>
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 <Typography
                   sx={{
-                    fontSize: { xs: '1.05rem', md: '1.25rem' },
+                    fontSize: { xs: '1rem', md: '1.2rem' },
                     fontWeight: 600,
                     letterSpacing: '-0.02em',
                     color: '#1d1d1f',
@@ -111,7 +115,6 @@ export default function Header() {
                     fontSize: '0.7rem',
                     color: '#86868b',
                     lineHeight: 1.1,
-                    letterSpacing: '-0.01em',
                   }}
                 >
                   Bilim va kasb maskani
@@ -169,18 +172,14 @@ export default function Header() {
             </Box>
 
             {/* RIGHT ACTIONS */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-              <IconButton
-                size="small"
-                sx={{
-                  display: { xs: 'none', md: 'inline-flex' },
-                  color: '#1d1d1f',
-                  '&:hover': { background: 'rgba(0,0,0,0.04)' },
-                }}
-              >
-                <SearchIcon sx={{ fontSize: 20 }} />
-              </IconButton>
-
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: { xs: 0.5, sm: 0.75 },
+                flexShrink: 0,
+              }}
+            >
               <LanguageSwitcher />
 
               {user ? (
@@ -192,24 +191,17 @@ export default function Header() {
                     ml: 1,
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <Avatar
-                      sx={{
-                        width: 34,
-                        height: 34,
-                        bgcolor: '#0071e3',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {user.name?.[0]?.toUpperCase()}
-                    </Avatar>
-                    <Typography
-                      sx={{ fontSize: '0.9rem', color: '#1d1d1f', fontWeight: 500 }}
-                    >
-                      {user.name}
-                    </Typography>
-                  </Box>
+                  <Avatar
+                    sx={{
+                      width: 34,
+                      height: 34,
+                      bgcolor: '#0071e3',
+                      fontSize: '0.9rem',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {user.name?.[0]?.toUpperCase()}
+                  </Avatar>
                   <Button
                     onClick={handleLogout}
                     size="small"
@@ -258,6 +250,7 @@ export default function Header() {
                 sx={{
                   display: { xs: 'inline-flex', lg: 'none' },
                   color: '#1d1d1f',
+                  p: 1,
                   '&:hover': { background: 'rgba(0,0,0,0.04)' },
                 }}
               >
@@ -274,7 +267,12 @@ export default function Header() {
         open={open}
         onClose={() => setOpen(false)}
         PaperProps={{
-          sx: { width: '100%', maxWidth: 400, borderRadius: 0, p: 2 },
+          sx: {
+            width: '100%',
+            maxWidth: { xs: '100%', sm: 400 },
+            borderRadius: 0,
+            p: 2,
+          },
         }}
       >
         <Box
@@ -296,15 +294,18 @@ export default function Header() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'white',
+                fontWeight: 700,
+                fontSize: '0.9rem',
+                letterSpacing: '-0.5px',
               }}
             >
-              <SchoolIcon sx={{ fontSize: 20 }} />
+              KM
             </Box>
             <Typography sx={{ fontSize: '1.05rem', fontWeight: 600 }}>
               Kelajak Markazi
             </Typography>
           </Box>
-          <IconButton onClick={() => setOpen(false)}>
+          <IconButton onClick={() => setOpen(false)} size="small">
             <CloseIcon />
           </IconButton>
         </Box>
@@ -318,19 +319,35 @@ export default function Header() {
               alignItems: 'center',
               gap: 2,
               mb: 2,
-              p: 2,
+              p: 1.5,
               background: '#f5f5f7',
               borderRadius: 3,
             }}
           >
-            <Avatar sx={{ bgcolor: '#0071e3' }}>
+            <Avatar sx={{ bgcolor: '#0071e3', width: 40, height: 40 }}>
               {user.name?.[0]?.toUpperCase()}
             </Avatar>
-            <Box>
-              <Typography sx={{ fontWeight: 600, fontSize: '1rem' }}>
+            <Box sx={{ minWidth: 0, flex: 1 }}>
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  fontSize: '0.9375rem',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+              >
                 {user.name}
               </Typography>
-              <Typography sx={{ fontSize: '0.85rem', color: '#86868b' }}>
+              <Typography
+                sx={{
+                  fontSize: '0.8rem',
+                  color: '#86868b',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+              >
                 {user.email}
               </Typography>
             </Box>
@@ -346,7 +363,7 @@ export default function Header() {
                 onClick={() => setOpen(false)}
                 sx={{
                   borderRadius: 2,
-                  py: 1.5,
+                  py: 1.25,
                   '&.active': {
                     background: 'rgba(0, 113, 227, 0.08)',
                     color: '#0071e3',
@@ -357,7 +374,7 @@ export default function Header() {
                 <ListItemText
                   primary={item.label}
                   primaryTypographyProps={{
-                    fontSize: '1.1rem',
+                    fontSize: '1rem',
                     fontWeight: 500,
                     letterSpacing: '-0.01em',
                   }}
@@ -369,25 +386,32 @@ export default function Header() {
 
         <Divider sx={{ my: 2 }} />
 
+        {/* TIL TANLASH */}
+        <Box sx={{ mb: 2, display: 'flex', justifyContent: 'center' }}>
+          <LanguageSwitcher />
+        </Box>
+
+        <Divider sx={{ my: 2 }} />
+
         {user ? (
           <Button
             onClick={handleLogout}
             variant="outlined"
             fullWidth
             color="error"
-            sx={{ py: 1.5, fontSize: '1rem' }}
+            sx={{ py: 1.25, fontSize: '0.9375rem' }}
           >
             {t('nav.logout')}
           </Button>
         ) : (
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.25 }}>
             <Button
               component={Link}
               to="/login"
               onClick={() => setOpen(false)}
               variant="outlined"
               fullWidth
-              sx={{ py: 1.5, fontSize: '1rem' }}
+              sx={{ py: 1.25, fontSize: '0.9375rem' }}
             >
               {t('nav.login')}
             </Button>
@@ -397,7 +421,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               variant="contained"
               fullWidth
-              sx={{ py: 1.5, fontSize: '1rem' }}
+              sx={{ py: 1.25, fontSize: '0.9375rem' }}
             >
               {t('nav.register')}
             </Button>

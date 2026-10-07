@@ -28,6 +28,8 @@ export default function App() {
             flexDirection: 'column',
             minHeight: '100vh',
             background: '#fff',
+            // BottomNav uchun pastda joy
+            pb: { xs: 0, lg: 0 },
           }}
         >
           <Header />

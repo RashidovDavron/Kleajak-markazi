@@ -5,9 +5,7 @@ import {
   Box,
   Container,
   Typography,
-  Grid,
   Card,
-  CardContent,
   Button,
   Stack,
   RadioGroup,
@@ -105,18 +103,35 @@ export default function Career() {
   return (
     <Box>
       {/* HERO */}
-      <Box sx={{ textAlign: 'center', py: { xs: 8, md: 10 }, px: 2 }}>
+      <Box
+        sx={{
+          textAlign: 'center',
+          py: { xs: 5, sm: 7, md: 10 },
+          px: { xs: 2, sm: 3 },
+        }}
+      >
         <Container maxWidth="md">
-          <Typography variant="h1" className="fade-up" sx={{ mb: 3 }}>
+          <Typography
+            variant="h1"
+            className="fade-up"
+            sx={{
+              mb: { xs: 1.5, md: 3 },
+              fontSize: { xs: '1.75rem', sm: '2.5rem', md: '3.5rem' },
+              fontWeight: 600,
+              letterSpacing: '-0.03em',
+              lineHeight: 1.15,
+            }}
+          >
             {t('sections.career_title')}
           </Typography>
           <Typography
             className="fade-up fade-up-delay-1"
             sx={{
               color: '#86868b',
-              fontSize: { xs: '1.125rem', md: '1.5rem' },
+              fontSize: { xs: '0.9375rem', sm: '1rem', md: '1.25rem' },
               maxWidth: 680,
               mx: 'auto',
+              lineHeight: 1.6,
             }}
           >
             {t('sections.career_desc')}
@@ -124,74 +139,126 @@ export default function Career() {
         </Container>
       </Box>
 
-      {/* DIRECTIONS */}
-      <Box sx={{ background: '#f5f5f7', py: { xs: 6, md: 10 } }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={{ xs: 2, md: 3 }}>
+      {/* DIRECTIONS GRID */}
+      <Box sx={{ background: '#f5f5f7', py: { xs: 5, sm: 6, md: 10 } }}>
+        <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',              // 📱 Mobil: 1 ustun
+                sm: '1fr',              // 📱 Katta telefon: 1 ustun
+                md: 'repeat(2, 1fr)',   // 📱 Planshet: 2 ustun
+                lg: 'repeat(3, 1fr)',   // 💻 Desktop: 3 ustun
+              },
+              gap: { xs: 2, sm: 2.5, md: 3 },
+              alignItems: 'stretch',
+            }}
+          >
             {directions.map((d, i) => (
-              <Grid item xs={12} sm={6} md={4} key={d.id}>
-                <Card
-                  className={`fade-up fade-up-delay-${(i % 3) + 1}`}
-                  sx={{ p: { xs: 3, md: 4 }, height: '100%' }}
+              <Card
+                key={d.id}
+                className={`fade-up fade-up-delay-${(i % 3) + 1}`}
+                sx={{
+                  p: { xs: 2.5, sm: 3, md: 3.5 },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  minHeight: { xs: 220, sm: 260, md: 280 },
+                  height: '100%',
+                  width: '100%',
+                }}
+              >
+                <Box
+                  sx={{
+                    width: { xs: 56, sm: 64, md: 70 },
+                    height: { xs: 56, sm: 64, md: 70 },
+                    borderRadius: 3,
+                    background: `${d.color}15`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: { xs: '1.75rem', sm: '2rem', md: '2.25rem' },
+                    mb: { xs: 2, md: 2.5 },
+                    flexShrink: 0,
+                  }}
                 >
-                  <Box
-                    sx={{
-                      width: 70,
-                      height: 70,
-                      borderRadius: 3.5,
-                      background: `${d.color}15`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '2.25rem',
-                      mb: 2.5,
-                    }}
-                  >
-                    {d.icon}
-                  </Box>
-                  <Typography
-                    sx={{
-                      fontSize: '1.25rem',
-                      fontWeight: 600,
-                      letterSpacing: '-0.02em',
-                      mb: 1.5,
-                    }}
-                  >
-                    {d.title[lang] || d.title.uz}
-                  </Typography>
-                  <Typography sx={{ color: '#86868b', fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    {d.desc[lang] || d.desc.uz}
-                  </Typography>
-                </Card>
-              </Grid>
+                  {d.icon}
+                </Box>
+
+                <Typography
+                  sx={{
+                    fontSize: { xs: '1.15rem', sm: '1.25rem', md: '1.35rem' },
+                    fontWeight: 600,
+                    letterSpacing: '-0.02em',
+                    mb: 1,
+                    color: '#1d1d1f',
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {d.title[lang] || d.title.uz}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: '#86868b',
+                    fontSize: { xs: '0.875rem', sm: '0.9rem', md: '0.9375rem' },
+                    lineHeight: 1.5,
+                    flexGrow: 1,
+                  }}
+                >
+                  {d.desc[lang] || d.desc.uz}
+                </Typography>
+              </Card>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
 
-      {/* TEST */}
-      <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="md">
-          <Box sx={{ textAlign: 'center', mb: 5 }}>
+      {/* TEST SECTION */}
+      <Box sx={{ py: { xs: 6, sm: 8, md: 12 } }}>
+        <Container maxWidth="md" sx={{ px: { xs: 2, sm: 3 } }}>
+          <Box sx={{ textAlign: 'center', mb: { xs: 4, md: 5 } }}>
             <Chip
               icon={<SchoolIcon />}
-              label={lang === 'ru' ? 'Онлайн-тест' : lang === 'en' ? 'Online Test' : 'Onlayn test'}
+              label={
+                lang === 'ru'
+                  ? 'Онлайн-тест'
+                  : lang === 'en'
+                  ? 'Online Test'
+                  : 'Onlayn test'
+              }
               sx={{
                 background: 'rgba(0, 113, 227, 0.1)',
                 color: '#0071e3',
                 fontWeight: 600,
                 mb: 2,
                 px: 1,
+                fontSize: { xs: '0.75rem', md: '0.875rem' },
               }}
             />
-            <Typography variant="h2" sx={{ mb: 2 }}>
+            <Typography
+              variant="h2"
+              sx={{
+                mb: 2,
+                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+                fontWeight: 600,
+                letterSpacing: '-0.02em',
+              }}
+            >
               {lang === 'ru'
                 ? 'Профориентационный тест'
                 : lang === 'en'
                 ? 'Career Test'
                 : "Kasbga yo'naltirish testi"}
             </Typography>
-            <Typography sx={{ color: '#86868b', fontSize: '1.125rem' }}>
+            <Typography
+              sx={{
+                color: '#86868b',
+                fontSize: { xs: '0.9375rem', md: '1.125rem' },
+                lineHeight: 1.6,
+                px: { xs: 1, md: 0 },
+              }}
+            >
               {lang === 'ru'
                 ? 'Ответьте на 3 вопроса и узнайте свою профессию'
                 : lang === 'en'
@@ -203,7 +270,7 @@ export default function Career() {
           <Card
             className="fade-up"
             sx={{
-              p: { xs: 3, md: 5 },
+              p: { xs: 2.5, sm: 3, md: 5 },
               boxShadow: '0 30px 80px rgba(0, 0, 0, 0.08)',
               '&:hover': { transform: 'none' },
             }}
@@ -225,7 +292,13 @@ export default function Career() {
                         ? `Question ${step + 1} of ${careerQuestions.length}`
                         : `Savol ${step + 1} / ${careerQuestions.length}`}
                     </Typography>
-                    <Typography sx={{ fontSize: '0.875rem', color: '#0071e3', fontWeight: 600 }}>
+                    <Typography
+                      sx={{
+                        fontSize: '0.875rem',
+                        color: '#0071e3',
+                        fontWeight: 600,
+                      }}
+                    >
                       {Math.round(((step + 1) / careerQuestions.length) * 100)}%
                     </Typography>
                   </Stack>
@@ -237,7 +310,8 @@ export default function Career() {
                       borderRadius: 3,
                       background: '#f5f5f7',
                       '& .MuiLinearProgress-bar': {
-                        background: 'linear-gradient(135deg, #0071e3 0%, #5856d6 100%)',
+                        background:
+                          'linear-gradient(135deg, #0071e3 0%, #5856d6 100%)',
                         borderRadius: 3,
                       },
                     }}
@@ -247,10 +321,11 @@ export default function Career() {
                 {/* QUESTION */}
                 <Typography
                   sx={{
-                    fontSize: { xs: '1.25rem', md: '1.5rem' },
+                    fontSize: { xs: '1.15rem', md: '1.5rem' },
                     fontWeight: 600,
                     letterSpacing: '-0.02em',
                     mb: 3,
+                    lineHeight: 1.3,
                   }}
                 >
                   {currentQ.q[lang] || currentQ.q.uz}
@@ -266,7 +341,7 @@ export default function Career() {
                         key={i}
                         onClick={() => handleAnswer(currentQ.id, opt.value)}
                         sx={{
-                          p: 2,
+                          p: { xs: 1.5, md: 2 },
                           cursor: 'pointer',
                           border:
                             answers[currentQ.id] === opt.value
@@ -290,7 +365,7 @@ export default function Career() {
                           label={
                             <Typography
                               sx={{
-                                fontSize: '1.0625rem',
+                                fontSize: { xs: '0.9375rem', md: '1.0625rem' },
                                 fontWeight: 500,
                                 color: '#1d1d1f',
                               }}
@@ -306,15 +381,29 @@ export default function Career() {
                 </RadioGroup>
 
                 {/* BUTTONS */}
-                <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
+                <Stack
+                  direction={{ xs: 'column', sm: 'row' }}
+                  spacing={2}
+                  sx={{ mt: 4 }}
+                >
                   {step > 0 && (
                     <Button
                       onClick={() => setStep(step - 1)}
                       variant="outlined"
                       size="large"
-                      sx={{ py: 1.5, px: 3 }}
+                      sx={{
+                        py: 1.5,
+                        px: 3,
+                        width: { xs: '100%', sm: 'auto' },
+                        textTransform: 'none',
+                      }}
                     >
-                      ← {lang === 'ru' ? 'Назад' : lang === 'en' ? 'Back' : 'Orqaga'}
+                      ←{' '}
+                      {lang === 'ru'
+                        ? 'Назад'
+                        : lang === 'en'
+                        ? 'Back'
+                        : 'Orqaga'}
                     </Button>
                   )}
                   <Button
@@ -322,8 +411,13 @@ export default function Career() {
                     disabled={!canProceed}
                     variant="contained"
                     size="large"
-                    fullWidth
-                    sx={{ py: 1.5, fontSize: '1.0625rem' }}
+                    sx={{
+                      py: 1.5,
+                      fontSize: '1.0625rem',
+                      textTransform: 'none',
+                      flex: { xs: 1, sm: 'none' },
+                      width: { xs: '100%', sm: 'auto' },
+                    }}
                   >
                     {step === careerQuestions.length - 1
                       ? lang === 'ru'
@@ -342,7 +436,15 @@ export default function Career() {
             ) : (
               // RESULT
               <Box sx={{ textAlign: 'center' }} className="fade-in">
-                <Box sx={{ fontSize: '5rem', mb: 2 }}>{result.icon}</Box>
+                <Box
+                  sx={{
+                    fontSize: { xs: '4rem', md: '5rem' },
+                    mb: 2,
+                    lineHeight: 1,
+                  }}
+                >
+                  {result.icon}
+                </Box>
                 <Typography
                   sx={{
                     fontSize: '0.875rem',
@@ -361,14 +463,19 @@ export default function Career() {
                 </Typography>
                 <Typography
                   variant="h2"
-                  sx={{ fontSize: { xs: '1.75rem', md: '2.5rem' }, mb: 2 }}
+                  sx={{
+                    fontSize: { xs: '1.5rem', md: '2.25rem' },
+                    mb: 2,
+                    fontWeight: 600,
+                    letterSpacing: '-0.02em',
+                  }}
                 >
                   {result.title[lang] || result.title.uz}
                 </Typography>
                 <Typography
                   sx={{
                     color: '#86868b',
-                    fontSize: '1.125rem',
+                    fontSize: { xs: '1rem', md: '1.125rem' },
                     lineHeight: 1.6,
                     maxWidth: 500,
                     mx: 'auto',
@@ -388,7 +495,12 @@ export default function Career() {
                     to={result.link}
                     variant="contained"
                     size="large"
-                    sx={{ px: 4, py: 1.5 }}
+                    sx={{
+                      px: 4,
+                      py: 1.5,
+                      textTransform: 'none',
+                      width: { xs: '100%', sm: 'auto' },
+                    }}
                   >
                     {lang === 'ru'
                       ? 'Смотреть'
@@ -400,7 +512,12 @@ export default function Career() {
                     onClick={handleReset}
                     variant="outlined"
                     size="large"
-                    sx={{ px: 4, py: 1.5 }}
+                    sx={{
+                      px: 4,
+                      py: 1.5,
+                      textTransform: 'none',
+                      width: { xs: '100%', sm: 'auto' },
+                    }}
                   >
                     {lang === 'ru'
                       ? 'Пройти снова'
