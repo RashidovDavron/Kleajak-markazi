@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "circles": "To'garaklar",
+    "sciences": "Ilm-fan",
+    "professions": "Kasblar",
+    "career": "Kasbga yo'naltirish",
+    "news": "Yangiliklar",
+    "leadership": "Raxbariyat",
+    "contact": "Aloqa",
+    "login": "Kirish",
+    "register": "Ro'yxatdan o'tish",
+    "logout": "Chiqish"
+  },
+  "hero": {
+    "title": "Kelajak Markazi",
+    "subtitle": "Bilim, ko'nikma va kelajak kasblari maskani",
+    "description": "Zamonaviy to'garaklar, ilm-fan va kasbga yo'naltirish xizmatlari bir joyda.",
+    "cta": "Boshlash",
+    "cta2": "Batafsil"
+  },
+  "stats": {
+    "students": "O'quvchilar",
+    "circles": "To'garaklar",
+    "teachers": "Ustozlar",
+    "awards": "Yutuqlar"
+  },
+  "sections": {
+    "about_title": "Biz haqimizda",
+    "about_desc": "Kelajak Markazi — yoshlar uchun bilim va ko'nikma maskani",
+    "circles_title": "To'garaklar",
+    "circles_desc": "Qiziqishingizga mos to'garakni tanlang",
+    "sciences_title": "Ilm-fan",
+    "sciences_desc": "Ilmiy bilimlaringizni oshiring",
+    "professions_title": "Zamonaviy kasblar",
+    "professions_desc": "Kelajakda talab qilinadigan kasblar",
+    "career_title": "Kasbga yo'naltirish",
+    "career_desc": "To'g'ri kasbni tanlashga yordam beramiz",
+    "news_title": "Yangiliklar",
+    "leadership_title": "Raxbariyat",
+    "contact_title": "Aloqa"
+  },
+  "buttons": {
+    "more": "Batafsil",
+    "register": "Ro'yxatdan o'tish",
+    "contact": "Bog'lanish",
+    "all": "Barchasi"
+  },
+  "footer": {
+    "note": "Eslatma",
+    "note_text": "Bu sayt Kelajak Markazi uchun yaratilgan.",
+    "pages": "Sahifalar",
+    "company": "Markaz",
+    "account": "Hisob",
+    "contact": "Bog'lanish",
+    "subscribe": "Obuna",
+    "subscribe_placeholder": "Email manzilingiz",
+    "rights": "Barcha huquqlar himoyalangan",
+    "privacy": "Maxfiylik",
+    "terms": "Shartlar",
+    "sitemap": "Sitemap"
+  }
+}

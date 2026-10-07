@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "circles": "Clubs",
+    "sciences": "Science",
+    "professions": "Professions",
+    "career": "Career Guidance",
+    "news": "News",
+    "leadership": "Leadership",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "Future Center",
+    "subtitle": "Knowledge, skills and future professions",
+    "description": "Modern clubs, science and career guidance in one place.",
+    "cta": "Get Started",
+    "cta2": "Learn More"
+  },
+  "stats": {
+    "students": "Students",
+    "circles": "Clubs",
+    "teachers": "Teachers",
+    "awards": "Awards"
+  },
+  "sections": {
+    "about_title": "About Us",
+    "about_desc": "Future Center — a place of knowledge for youth",
+    "circles_title": "Clubs",
+    "circles_desc": "Choose a club based on your interests",
+    "sciences_title": "Science",
+    "sciences_desc": "Expand your scientific knowledge",
+    "professions_title": "Modern Professions",
+    "professions_desc": "Professions in demand in the future",
+    "career_title": "Career Guidance",
+    "career_desc": "We help you choose the right profession",
+    "news_title": "News",
+    "leadership_title": "Leadership",
+    "contact_title": "Contact"
+  },
+  "buttons": {
+    "more": "Learn More",
+    "register": "Register",
+    "contact": "Contact",
+    "all": "All"
+  },
+  "footer": {
+    "note": "Note",
+    "note_text": "This site was created for the Future Center.",
+    "pages": "Pages",
+    "company": "Center",
+    "account": "Account",
+    "contact": "Contact",
+    "subscribe": "Subscribe",
+    "subscribe_placeholder": "Your email",
+    "rights": "All rights reserved",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "sitemap": "Sitemap"
+  }
+}
